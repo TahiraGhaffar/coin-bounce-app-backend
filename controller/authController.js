@@ -87,11 +87,15 @@ const authController = {
     res.cookie("accessToken", accessToken, {
       maxAge: 1000 * 60 * 60 * 24,
       httpOnly: true,
+      sameSite:"None", // b/c frontend & backend deployed on different sites
+      secure:true, // b/c we sending 'cookies'
     });
 
     res.cookie("refreshToken", refreshToken, {
       maxAge: 1000 * 60 * 60 * 24,
       httpOnly: true,
+      sameSite:"None", // b/c frontend & backend deployed on different sites
+      secure:true, // b/c we sending 'cookies'
     });
 
     // 6. response send
@@ -174,11 +178,15 @@ const authController = {
     res.cookie("accessToken", accessToken, {
       maxAge: 1000 * 60 * 60 * 24,
       httpOnly: true,
+      sameSite:"None", // b/c frontend & backend deployed on different sites
+      secure:true, // b/c we sending 'cookies'
     });
 
     res.cookie("refreshToken", refreshToken, {
       maxAge: 1000 * 60 * 60 * 24,
       httpOnly: true,
+      sameSite:"None", // b/c frontend & backend deployed on different sites
+      secure:true, // b/c we sending 'cookies'
     });
 
     const userDto = new UserDTO(user);
